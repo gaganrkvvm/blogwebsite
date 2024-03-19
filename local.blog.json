@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "65f871373af03524a6043460"
+  },
+  "const": "const",
+  "express": "articleRouter",
+  "=": "=",
+  "require('express')": "require(\"./routes/articles\")"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043461"
+  },
+  "const": "const",
+  "express": "Article",
+  "=": "=",
+  "require('express')": "require('./models/article')"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043462"
+  },
+  "const": "const",
+  "express": "mongoose",
+  "=": "=",
+  "require('express')": "require('mongoose')"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043463"
+  },
+  "const": "const",
+  "express": "methodOverride",
+  "=": "=",
+  "require('express')": "require('method-override')"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043464"
+  },
+  "const": "const",
+  "express": "app",
+  "=": "=",
+  "require('express')": "express()"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043465"
+  }
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043466"
+  },
+  "const": "mongoose.connect('mongodb://localhost/bharatDatabase')"
+},
+{
+  "_id": {
+    "$oid": "65f871373af03524a6043467"
+  },
+  "const": "app.set(\"views\",",
+  "express": "./view\")\r\napp.set('view engine', 'ejs')\r\napp.use(express.urlencoded({extended: false}))\r\napp.use(methodOverride('_method'))\r\napp.get('/', async(req, res) => {\r\n    const articles =await Article.find().sort({ createdAt:'desc'})\r\n    res.render('articles/index', { articles: articles })\r\n    res.send(\"welcome to project\")\r\n})\r\n\r\napp.use('/articles', articleRouter)\r\n\r\napp.listen(27017)"
+}]
